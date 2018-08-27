@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- Title -->
+        <title>{% block title %}ProEstoque{% endblock %}</title>
+
+        {% load static %}
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{% static 'aplicacaoWeb/img/logo_proestoque.png' %}" type="image/png">
+
+        <!-- Arquivos CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'aplicacaoWeb/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'aplicacaoWeb/css/master.css' %}">
+
+        {% block styles %}{% endblock %}
+    </head>
+
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+              <img src="{% static 'aplicacaoWeb/img/logo_proestoque.png' %}" height="45px">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
+                </li>             
+                              
+              </ul>              
+            </div>
+          </nav>
+
+          
+
+        <!-- Conteúdo do site -->
+        {% block conteudo %}{% endblock %}
+
+        <!-- Scripts .js -->
+        <script src="{% static 'aplicacaoWeb/js/jquery.min.js' %}"></script>
+        <script src="{% static 'aplicacaoWeb/js/bootstrap.min.js' %}"></script>
+
+        {% block scripts %}{% endblock %}
+
+        <script src="{% static 'aplicacaoWeb/js/scripts.js' %}"></script>
+    </body>
+</html>
