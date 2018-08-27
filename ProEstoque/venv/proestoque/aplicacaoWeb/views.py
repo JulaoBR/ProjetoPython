@@ -1,9 +1,9 @@
 from django.shortcuts import render
 
 # Create your views here.
-def home(request):
-
-    return  render(request, 'aplicacaoWeb/home.html')
+def IndexTemplateView(request):
+   
+   return render(request, "aplicacaoWeb/index.html")
 
 def cadProduto(request):
 
