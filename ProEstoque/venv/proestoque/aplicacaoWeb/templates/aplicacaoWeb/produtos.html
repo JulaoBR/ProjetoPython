@@ -1,0 +1,48 @@
+{% extends "aplicacaoWeb/_layouts/base.html" %}
+
+{% block conteudo %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">     
+        <h5 class="card-title">Lista de produtos</h5>
+
+          {% if produtos|length > 0 %}
+
+          <table class="table">
+              <thead class="thead-dark">
+              <tr>
+                <th scope="col">Descricao</th>  
+                <th scope="col">Peso liquido</th>
+                <th scope="col">Peso bruto</th>
+                <th scope="col">Prazo val</th>
+                <th scope="col">Qtd min</th>
+                <th scope="col">Qtd max</th>          
+                <th scope="col">Unidade medida</th>
+                <th scope="col">Grupo</th>            
+              </tr>
+              </thead>
+              <tbody>
+              {% for produto in produtos %}
+                <tr>
+                  <td>{{ produto.pro_descricao }}</td>
+                  <td>{{ produto.pro_peso_liquido }}</td>
+                  <td>{{ produto.pro_peso_bruto }}</td>
+                  <td>{{ produto.pro_prazo_validade }}</td>
+                  <td>{{ produto.pro_qtd_minima }}</td>
+                  <td>{{ produto.pro_qtd_maxima }}</td>
+                  <td>{{ produto.unidade }}</td>
+                  <td>{{ produto.grupo }}</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+        {% else %}
+          <div class="text-center mt-5 mb-5 jumbotron">
+            <h5>Nenhum <code>Produto</code> cadastrado ainda.</h5>
+          </div>
+        {% endif %}
+          <hr />
+    </div>
+  </div>
+</div>
+{% endblock %}
